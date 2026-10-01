@@ -1,3 +1,4 @@
+import FamilyVisits from '@/components/visits/FamilyVisits';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/context/AuthContext';
 import { supabase } from '@/lib/supabaseClient';
@@ -42,32 +43,7 @@ const FamilyDashboard = () => {
           </Button>
         </header>
 
-        <section className="grid gap-6 md:grid-cols-2">
-          <article className="rounded-3xl border border-[#ba5927]/40 bg-white p-6 shadow-sm">
-            <h2 className="text-2xl font-semibold text-[#3c2b1c]" style={{ fontFamily: "'Lora', serif" }}>
-              Upcoming Visits
-            </h2>
-            <p className="mt-2 text-sm text-[#2b1e14]">
-              When the superadmin assigns a caregiver, you will see the date, time, and focus of the
-              visit here.
-            </p>
-            <div className="mt-4 rounded-2xl border border-dashed border-[#ba5927]/40 p-4 text-center text-sm text-[#2b1e14]/70">
-              No visits assigned yet. You&apos;ll receive an email once the first visit is scheduled.
-            </div>
-          </article>
-
-          <article className="rounded-3xl border border-[#ba5927]/40 bg-white p-6 shadow-sm">
-            <h2 className="text-2xl font-semibold text-[#3c2b1c]" style={{ fontFamily: "'Lora', serif" }}>
-              Caregiver Activity Log
-            </h2>
-            <p className="mt-2 text-sm text-[#2b1e14]">
-              After each visit, caregivers record highlights, medications given, and moments of joy.
-            </p>
-            <div className="mt-4 rounded-2xl border border-dashed border-[#ba5927]/40 p-4 text-center text-sm text-[#2b1e14]/70">
-              Logs will populate here once a caregiver submits them.
-            </div>
-          </article>
-        </section>
+        <FamilyVisits />
       </div>
     </main>
   );

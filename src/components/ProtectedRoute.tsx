@@ -24,7 +24,7 @@ const ProtectedRoute = ({ children, redirectTo, allowedRoles }: ProtectedRoutePr
     return <Navigate to={redirectTo} replace />;
   }
 
-  if (allowedRoles && (!profile || !allowedRoles.includes(profile.role))) {
+  if (allowedRoles && (!profile || profile.status !== 'active' || !allowedRoles.includes(profile.role))) {
     return <Navigate to={redirectTo} replace />;
   }
 

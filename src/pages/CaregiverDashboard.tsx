@@ -1,3 +1,4 @@
+import CaregiverVisits from '@/components/visits/CaregiverVisits';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/context/AuthContext';
 import { supabase } from '@/lib/supabaseClient';
@@ -42,32 +43,7 @@ const CaregiverDashboard = () => {
           </Button>
         </header>
 
-        <section className="grid gap-6 md:grid-cols-2">
-          <article className="rounded-3xl border border-[#ba5927]/40 bg-white p-6 shadow-sm">
-            <h2 className="text-2xl font-semibold text-[#3c2b1c]" style={{ fontFamily: "'Lora', serif" }}>
-              Today&apos;s Assignments
-            </h2>
-            <p className="mt-2 text-sm text-[#2b1e14]">
-              The superadmin will assign visits with start time, location, and special notes.
-            </p>
-            <div className="mt-4 rounded-2xl border border-dashed border-[#ba5927]/40 p-4 text-center text-sm text-[#2b1e14]/70">
-              No assignments yet. You&apos;ll be notified once your first family is scheduled.
-            </div>
-          </article>
-
-          <article className="rounded-3xl border border-[#ba5927]/40 bg-white p-6 shadow-sm">
-            <h2 className="text-2xl font-semibold text-[#3c2b1c]" style={{ fontFamily: "'Lora', serif" }}>
-              Visit Log Drafts
-            </h2>
-            <p className="mt-2 text-sm text-[#2b1e14]">
-              Capture arrival times, activities completed, and recommendations while they&apos;re
-              fresh.
-            </p>
-            <div className="mt-4 rounded-2xl border border-dashed border-[#ba5927]/40 p-4 text-center text-sm text-[#2b1e14]/70">
-              Draft entries will appear here for quick edits before you submit them.
-            </div>
-          </article>
-        </section>
+        <CaregiverVisits />
       </div>
     </main>
   );
