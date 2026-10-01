@@ -1,3 +1,4 @@
+import AssignVisit from '@/components/visits/AssignVisit';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/context/AuthContext';
 import { supabase } from '@/lib/supabaseClient';
@@ -61,7 +62,7 @@ const SuperadminDashboard = () => {
   };
 
   const links = [
-    { id: 'overview', label: 'Family & Caregiver Overview' },
+    { id: 'visits', label: 'Assign & Review Visits' },
     { id: 'revenue', label: 'Revenue Snapshot' },
     { id: 'applications', label: 'Caregiver Applications' },
     { id: 'broadcast', label: 'Broadcast Messages' },
@@ -172,21 +173,7 @@ const SuperadminDashboard = () => {
             ))}
           </section>
 
-          <section id="overview" className="grid gap-6 lg:grid-cols-3">
-            <article className="rounded-3xl border border-[#ba5927]/40 bg-white p-6 shadow-sm lg:col-span-2">
-              <h2 className="text-2xl font-semibold text-[#3c2b1c]" style={{ fontFamily: "'Lora', serif" }}>
-                Family & Caregiver Overview
-              </h2>
-              <p className="mt-2 text-sm text-[#2b1e14]">
-                Later this space will visualize active clients, matching families, and which
-                caregivers are on duty. For now consider it a warm placeholder while we finish the
-                data connections.
-              </p>
-              <div className="mt-4 rounded-2xl border border-dashed border-[#ba5927]/40 p-6 text-center text-sm text-[#2b1e14]/70">
-                Dashboard cards coming soon. Use this as a reminder to define the key metrics you
-                want to see every morning.
-              </div>
-            </article>
+          <AssignVisit />
 
             <article
               id="revenue"
@@ -202,7 +189,6 @@ const SuperadminDashboard = () => {
                 Metrics will display here once payment tracking is connected.
               </div>
             </article>
-          </section>
 
           <section className="grid gap-6 md:grid-cols-2">
             <article
